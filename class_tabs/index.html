@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/aop.js"></script>
+    <title></title>
+    <style>
+        #tabs {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 500px;
+        }
+        #tabs .title {
+            list-style-type: none;
+            overflow: hidden;
+            border-bottom: 1px solid #ccc;
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+        #tabs .title li {
+            float: left;
+        }
+        #tabs .title li + li {
+            border-left: 1px solid #ccc
+        }
+        #tabs .title li a {
+            display: block;
+            padding: 5px 16px;
+            font-size: 18px;
+            color: grey;
+        }
+        #tabs .title li a:hover {
+            color: #264c99;
+        }
+        #content {
+            padding: 20px;
+            font-size: 16px;
+        }
+        #content div{
+            display: none;
+        }
+        #content div.active{
+            display: block;
+        }
+        div h3{
+            padding: 0px 5px;
+        }
+        div p{
+            padding: 0px 18px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="tabs">
+    <ul class="title">
+        <li class="tab"><a href="#home">Home</a></li>
+        <li class="tab"><a href="#profile">Profile</a></li>
+        <li class="tab"><a href="#dropdown">Dropdown</a></li>
+    </ul>
+    <div id="content">
+        <div id="home" class="active">
+            <h3>Title1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus at corporis distinctio necessitatibus nihil optio possimus repellendus totam ut? Accusamus beatae dignissimos earum molestiae natus provident, quos sit! Aut.</p>
+        </div>
+        <div id="profile">
+            <h3>Title2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem blanditiis debitis eligendi exercitationem, expedita fugiat harum molestias nobis odio officia perferendis possimus provident quaerat quidem reiciendis rem saepe? Accusamus, id!</p>
+        </div>
+        <div id="dropdown">
+            <h3>Title3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eius iure labore nisi rem repudiandae tempora. A aperiam architecto corporis cumque minus modi mollitia, quibusdam, quo quos recusandae sit ut!</p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/Tabs.js"></script>
+</body>
+</html>

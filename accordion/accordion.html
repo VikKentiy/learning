@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script src="jquery-1.11.3.js"></script>
+    <style type="text/css">
+        #wrap {
+            width: 600px;
+            margin: 0 auto;
+        }
+        .accordion {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .accordion .a_title {
+            background: silver;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .accordion .a_title:hover {
+            background: grey;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="wrap">
+    <ul class="accordion">
+        <li>
+            <div class="a_title">Item 1</div>
+            <div class="a_body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </li>
+        <li>
+            <div class="a_title">Item 2</div>
+            <div class="a_body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </li>
+        <li>
+            <div class="a_title">Item 3</div>
+            <div class="a_body">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    function Accordion(element) {
+        this.$element = $(element);
+        $('.a_body').hide();
+        $('.accordion .a_title').click(function(){
+            $('.a_body').slideUp();
+            $(this).next().slideDown();
+        });
+    };
+
+    var acc = new Accordion('#wrap');
+</script>

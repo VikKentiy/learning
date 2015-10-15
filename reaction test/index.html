@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<!-- css -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/tableStyle.css">
+</head>
+<body>
+	<!-- instruction -->
+
+	<div class="container-fluid block" id="instruction">
+		<div class="row ">
+			<div class="col-md-12 col-sm-12 col-xs-12 task" style="height: 589px;">
+				<div class="header text-center ">
+					<h1>reaction test</h1>
+				</div>
+				<div class="col-md-7 col-sm-8 col-xs-12 center">
+					<p class="text-center">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+					</p>
+					<button id="go" class="text-center">go</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- game -->
+	<div class="container-fluid block hide" id="block">
+		<div class="row">
+			<div class="col-md-8 col-sm-10 col-xs-12 center">
+
+				<div class="header text-center">
+					<h1>reaction test</h1>
+				</div>
+				<div id="coloredWords" class="row">
+					<span>some word</span>
+				</div>
+<!--========================== rule ==========================-->
+				<div id="wastedTime" class="row">
+					<!-- <div id="leftSideRule"></div> -->
+					<div id="centerRule">
+						<div id="pointer" class="pointer">
+							<div class="pointer runner"></div>
+						</div>
+					</div>
+					<!-- <div id="rightSideRule"></div> -->
+					<div class="wrap">
+						<div class="" ="correctionLeft"></div>
+						<div id="interval">
+							<div class="int" style="left: 0;"></div>
+							<div class="int" style="left: 10%;"></div>
+							<div class="int" style="left: 20%;"></div>
+							<div class="int" style="left: 30%;"></div>
+							<div class="int" style="left: 40%;"></div>
+							<div class="int" style="left: 50%;"></div>
+							<div class="int" style="left: 60%;"></div>
+							<div class="int" style="left: 70%;"></div>
+							<div class="int" style="left: 80%;"></div>
+							<div class="int" style="left: 90%;"></div>
+						</div>
+						<div class="correctionRight"></div>
+					</div>
+					<div class="wrap">
+						<div class="correctionLeft"></div>
+						<div id="seconds">
+							<div class="sec" style="left: 10%">
+								<span>1</span>
+							</div>
+							<div class="sec" style="left: 20%">
+								<span>2</span>
+							</div>
+							<div class="sec" style="left: 30%">
+								<span>3</span>
+							</div>
+							<div class="sec" style="left: 40%">
+								<span>4</span>
+							</div>
+							<div class="sec" style="left: 50%">
+								<span>5</span>
+							</div>
+							<div class="sec" style="left: 60%">
+								<span>6</span>
+							</div>
+							<div class="sec" style="left: 70%">
+								<span>7</span>
+							</div>
+							<div class="sec" style="left: 80%">
+								<span>8</span>
+							</div>
+							<div class="sec" style="left: 90%">
+								<span>9</span>
+							</div>
+						</div>
+						<div class="correctionRight"></div>
+					</div>
+				</div>
+<!--============================= buttons =================================-->
+				<div id="buttonsForAnswers" class="row">
+					<div class="col-md-2 col-sm-2 col-xs-2">
+						<button id="orange" class="center-block">
+							orange
+						</button>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-2">
+						<button id="green" class="center-block">
+							green
+						</button>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-2" >
+						<button id="yellow" class="center-block">
+							yellow
+						</button>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-2">
+						<button id="red" class="center-block">
+							red
+						</button>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-2">
+						<button id="blue" class="center-block">
+							blue
+						</button>
+					</div>
+					<div class="col-md-2 col-sm-2 col-xs-2">
+						<button id="white" class="center-block">
+							white
+						</button>
+					</div>
+				</div>
+<!--===========================result================================-->
+				<div>
+					<div id="finalResult"></div>
+					<button id="level2">Next level</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

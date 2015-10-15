@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div id="header_wrap">
+		<div id="header">
+			<div class="logo">
+				<a href="#"><img src="images/logo.png"></a>
+			</div>
+			<div class="nav">
+				<ul>
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">Features</a></li>
+					<li><a href="#">Gallery</a></li>
+					<li><a href="#">Video</a></li>
+					<li><a href="#">Prices</a></li>
+					<li><a href="#">Testimonials</a></li>
+					<li><a href="#">Downloads</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="slider">
+		<ul>
+			<li class="slide_li " style="background-image: url(assets/img1.jpg);">
+				<div class="right_box">
+					<h2>1 Simple, Beautiful <strong>and Amazing</strong></h2>
+					<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget nunc vitae tellus luctus ullamcorper. Nam porttitor ullamcorper felis at convallis. Aenean ornare vestibulum nisi fringilla lacinia. Nullam pulvinar sollicitudin velit id laoreet. Quisque non rhoncus sem.</div>
+					<div class="buttons">
+						<button class="btn">DOWNLOAD</button>
+						<button class="btn btn-active">LEARN MORE</button>
+					</div>
+					<div class="icons">
+						<span>Aavailable on :</span>
+						<ul>
+							<li><a href="#" class="apple"></a></li>
+							<li><a href="#" class="android"></a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="slide_li current" style="background-image: url(assets/img1.jpg);">
+				<div class="right_box">
+					<h2>2 Simple, Beautiful <strong>and Amazing</strong></h2>
+					<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget nunc vitae tellus luctus ullamcorper. Nam porttitor ullamcorper felis at convallis. Aenean ornare vestibulum nisi fringilla lacinia. Nullam pulvinar sollicitudin velit id laoreet. Quisque non rhoncus sem.</div>
+					<div class="buttons">
+						<button class="btn">DOWNLOAD</button>
+						<button class="btn btn-active">LEARN MORE</button>
+					</div>
+					<div class="icons">
+						<span>Aavailable on :</span>
+						<ul>
+							<li><a href="#" class="apple"></a></li>
+							<li><a href="#" class="android"></a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="slide_li" style="background-image: url(assets/img1.jpg);">
+				<div class="right_box">
+					<h2>3 Simple, Beautiful <strong>and Amazing</strong></h2>
+					<div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget nunc vitae tellus luctus ullamcorper. Nam porttitor ullamcorper felis at convallis. Aenean ornare vestibulum nisi fringilla lacinia. Nullam pulvinar sollicitudin velit id laoreet. Quisque non rhoncus sem.</div>
+					<div class="buttons">
+						<button class="btn">DOWNLOAD</button>
+						<button class="btn btn-active">LEARN MORE</button>
+					</div>
+					<div class="icons">
+						<span>Aavailable on :</span>
+						<ul>
+							<li><a href="#" class="apple"></a></li>
+							<li><a href="#" class="android"></a></li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="left_button"></div>
+		<div class="right_button"></div>
+		<div class="points">
+			<ul>
+				<li class="point"><a href="#"></a></li>
+				<li class="point"><a href="#"></a></li>
+				<li class="point"><a href="#"></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="contact_form">
+		<div id="map"></div>
+		<div id="form"></div>
+	</div>
+
+	<!-- JS -->
+	<!--<script type="text/javascript" src="js/main.js"></script>-->
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js">
+    </script>
+    <script type="text/javascript">
+		var slider = new Slider('#slider', {
+			leftButtonSelector: '.left_button',
+			rightButtonSelector: '.right_button',
+			slidesSelector: 'ul .slide_li'
+		});
+		function initialize() {
+			// 50.005737, 36.229087
+			var mapOptions = {
+				center: { lat: 50.005737, lng: 36.229087},
+				zoom: 16,
+				disableDefaultUI: true,
+				scrollwheel: false
+			};
+			var map = new google.maps.Map(document.getElementById('map'),
+				mapOptions);
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</body>
+</html>

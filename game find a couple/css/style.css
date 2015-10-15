@@ -1,0 +1,139 @@
+body {
+background-color: silver;
+}
+#wrap {
+	margin: 0 auto;
+	border: 2px solid #fff;
+	border-radius: 15px;
+	background-color: #fff;
+	width: 496px;
+	text-align: center;
+}
+h1 {
+	text-transform: uppercase;
+	border-bottom: 1px solid silver;
+	height: 49px;
+}
+.content {
+	height: 457px;
+	padding: 20px;
+	font-size: 30px;
+}
+.content p {
+	margin-bottom: 100px;
+}
+.btn {
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	border-radius: 50px;
+	font-size: 20px;
+	font-weight: bold;
+}
+.content4 {
+	position: relative;
+	height: 497px;
+	padding: none;
+}
+.content6 {
+	position: relative;
+	height: 497px;
+	padding: none;
+}
+.content8 {
+	position: relative;
+	height: 497px;
+	padding: none;
+}
+.cell {
+	position: relative;
+	float: left;
+	border: 1px solid silver;
+	text-align: center;
+	background-color: silver;
+	z-index: 5;
+}
+.cells4 {
+	border-radius: 15px;
+	font-size: 80px;
+}
+.cells6 {
+	border-radius: 12px;
+	font-size: 60px;
+}
+.cells8 {
+	border-radius: 8px;
+	font-size: 45px;
+}
+.hide {
+	display: none;
+}
+
+.back4, .back6, .back8 {
+	background-color: #fff;
+}
+
+/*========= анимация level1 =========*/
+.flip-container4 {
+	perspective: 1000;
+	margin: 11px;
+}
+
+.flip-container4:default .flipper, .flip-container4.default .flipper {
+	transform: rotateY(180deg);
+}
+
+.flipper {
+	transition: 0.5s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.front4, .back4, .front6, .back6, .front8, .back8 {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.flip-container4, .front4, .back4 {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+}
+.front4, .front6, .front8 {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+.back4, .back6, .back8 {
+	transform: rotateY(180deg);
+}
+/*========= анимация level1 =========*/
+.flip-container6 {
+	perspective: 1000;
+	margin: 4px 3px 4px 5px;
+}
+.flip-container6:default .flipper, .flip-container6.default .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container6, .front6, .back6 {
+	position: absolute;
+	width: 72px;
+	height: 72px;
+}
+
+/*========= анимация level1 =========*/
+.flip-container8 {
+	perspective: 1000;
+	margin: 2px;
+}
+.flip-container8:default .flipper, .flip-container8.default .flipper {
+	transform: rotateY(180deg);
+}
+
+.flip-container8, .front8, .back8 {
+	position: absolute;
+	width: 56px;
+	height: 56px;
+}

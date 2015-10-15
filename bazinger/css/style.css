@@ -1,0 +1,245 @@
+body {
+    padding: 0;
+    margin: 0;
+    font: 13px/16px 'latoregular' Arial;
+    background: black;
+}
+
+a {
+    color: #838383;
+    text-decoration: none;
+}
+
+#header_wrap {
+    background: rgba(7,7,7,0.3);
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+#header {
+    overflow: hidden;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.logo {
+    float: left;
+    margin: 16px 0 0 0;
+}
+
+.nav {
+    float: right;
+}
+.nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    overflow: hidden;
+}
+.nav ul li {
+    float: left;
+    font-family: 'droid_sansregular' Arial;
+    text-transform: uppercase;
+    margin: 0 38px 0 0;
+    position: relative;
+}
+.nav ul li a {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    color: #fff;
+}
+.nav ul li:hover a, .nav ul li.active a {
+    color: #4bcaff;
+}
+.nav ul li.active:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #4bcaff;
+}
+
+#slider {
+    position: relative;
+    overflow: hidden;
+}
+#slider:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: #4bcaff;
+}
+#slider > ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 800px;
+    background: #414042;
+    transition: margin-left 1s;
+
+
+    /*height: 800px;*/
+    position: relative;
+    /*width: 100%;*/
+    overflow: hidden;
+}
+#slider > ul > li {
+    /*position: relative;*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    height: inherit;
+    width: 100%;
+
+    position: absolute;
+    /*height: 100px;*/
+    /*width: 100%;*/
+    top: 0px;
+    left: -800%;
+    list-style-type: none;
+}
+#slider .current {
+    display: block;;
+    left: 0%;
+}
+#slider .left {
+    left: -100%;
+}
+#slider .right {
+    left: 100%;
+}
+#slider .left_button {
+    margin: 363px 0 0 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 55px;
+    height: 55px;
+    background: url(../images/slider_button.png) 0 0 no-repeat;
+}
+#slider .right_button {
+    margin: 363px 70px 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    background: url(../images/slider_button.png) -55px 0 no-repeat;
+}
+#slider .left_button:hover {
+    background-position: 0 -55px;
+}
+#slider .right_button:hover {
+    background-position: -55px -55px;
+}
+#slider .points {
+    position: absolute;
+    width: 100%;
+    bottom: 18px;
+    left: 0;
+    text-align: center;
+}
+#slider .points ul {
+    display: inline-block;
+    overflow: hidden;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#slider .points ul li {
+    float: left;
+    margin: 0 10px 0 0;
+}
+#slider .points ul li a {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(../images/slider_point.png) 0 0 no-repeat;
+}
+#slider .points ul li.active a, #slider .points ul li:hover a {
+    background-position: 0 -16px;
+}
+#slider .right_box {
+    color: #fff;
+    width: 590px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 155px 115px 0;
+    font-family: 'latolight' Arial;
+}
+#slider .right_box strong {
+    font-family: 'latobold' Arial;
+}
+#slider .right_box h2 {
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 1em;
+}
+#slider .right_box .text {
+    font-size: 18px;
+    line-height: 21px;
+    margin: 0 0 40px 0;
+}
+#slider .right_box .buttons {
+    margin: 0 0 49px 0;
+}
+#slider .right_box .buttons .btn {
+    display: inline-block;
+    padding: 0;
+    margin: 0 40px 0 0;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    background: none;
+    color: #fff;
+    font: 15px/15px 'latobold' Arial;
+    padding: 23px 50px;
+    cursor: pointer;
+}
+#slider .right_box .buttons .btn-active {
+    background: #4bcaff;
+    border: none;
+    border-bottom: 4px solid #277697;
+}
+#slider .right_box .icons {}
+#slider .right_box .icons span {
+    vertical-align: middle;
+    margin: 0 20px 0 0;
+}
+#slider .right_box .icons ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+}
+#slider .right_box .icons ul li {
+    float: left;
+    margin: 0 15px 0 0;
+}
+#slider .right_box .icons a {
+    display: block;
+    width: 54px;
+    height: 53px;
+    background-repeat: no-repeat;
+}
+#slider .right_box .icons a.apple {
+    background-image: url(../images/icons.png);
+    background-position: 0 0;
+}
+#slider .right_box .icons a.android {
+    background-image: url(../images/icons.png);
+}
+
+#map {
+    height: 600px;
+}

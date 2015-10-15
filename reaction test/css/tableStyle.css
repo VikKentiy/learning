@@ -1,0 +1,72 @@
+#wastedTime {
+  position: relative;
+  width: 100%;
+  background-color: white;
+
+}
+/*#leftSideRule {
+  float: left;
+  position: relative;
+  height: 10px;
+  border-right: none;
+  width: 1%;
+}
+#rightSideRule {
+  float: left;
+  position: relative;
+  height: 5px;
+  border-left: none;
+  width: 1%
+}*/
+#centerRule {
+  float: left;
+  position: relative;
+  height: 10px;
+  /*border: 1px solid black;*/
+  width: 100%;
+}
+#interval {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.int {
+  border-left: 1px solid black;
+  height: 7px;
+  position: absolute;
+  top: 100%;
+}
+
+#seconds {
+  position: relative;
+  width: 100%;
+  top: 4px;
+  color: white;
+}
+.sec {
+  left: 10%;
+  position: absolute;
+}
+#seconds span{
+  position: relative;
+  left: -50%;
+  top: 3px;
+}
+#pointer {
+  width: 100%;
+}
+.pointer {
+  height: 15px;
+  position: absolute;
+  top: -2px;
+  width: 15px;
+}
+.runner {
+  background-color: black;
+  border: 1px solid white;
+  position: absolute;
+  top: 0;
+  left: 0;
+/*  left: -85%;
+  z-index: 1;*/
+}

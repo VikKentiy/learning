@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <style>
+        #dialogBox {
+            width: 350px;
+            background-color: antiquewhite;
+            border: 1px solid lightgrey;
+            border-radius: 10px;
+            padding-bottom: 20px;
+        }
+        #dialogBox h2 {
+            margin: 20px;
+        }
+        #progress {
+            display: block;
+            margin: 0 10px 10px 20px;
+        }
+        #input{
+            margin: 0 10px 10px 20px;
+        }
+        #add{
+            margin: 0 10px 10px 0;
+        }
+        #remove{
+            margin: 0 10px 10px 0;
+        }
+        .crossed {
+            text-decoration: line-through;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<div id="dialogBox">
+    <h2>Todo</h2>
+    <span id="progress"></span>
+    <input type="text" id="input">
+    <Button id="add"> add </Button>
+    <Button id="remove"> delete </Button>
+</div>
+
+
+<script>
+
+    function List(element){
+        this.element = element;
+    }
+
+    List.prototype.element = null;
+    List.prototype.div = null;
+    List.prototype.label = null;
+
+    List.prototype.addElement = function(value) {
+        if(value){
+            var div = document.createElement('div');
+            div.className = 'entered';
+            div.style.margin= '0 0 5px 17px';
+            var label = document.createElement('label');
+            var input = document.createElement('input');
+            input.type = 'checkbox';
+            input.style.marginRight = '10px';
+            label.innerText = value;
+            div.appendChild(input);
+            div.appendChild(label);
+        }
+        this.element.appendChild(div);
+        this.finalList();
+    };
+
+    List.prototype.init = function() {
+        var self = this;
+        this.element.addEventListener('click',function(event){
+            var target = event.target;
+            if(target.tagName.toLowerCase() == 'input' && target.type.toLowerCase() == 'checkbox') {
+                var input = target;
+                var div = input.parentNode;
+                var label = div.querySelector('label');
+                if (input.checked == true){
+                    label.className = 'crossed';
+                } else {
+                    label.className = '';
+                }
+            }
+        self.finalList();
+        });
+    };
+
+    List.prototype.removeCase = function(){
+        var allInput = [].slice.call(this.element.querySelectorAll('input:checked'));
+        for (var i in allInput){
+            var div = allInput[i].parentNode;
+            this.element.removeChild(div);
+        }
+        this.finalList();
+    };
+
+    List.prototype.finalList = function (){
+        var
+                allCrossed = this.element.querySelectorAll('.crossed').length,
+                allNotErased = this.element.querySelectorAll('label').length,
+
+                progress = allCrossed + "/" + allNotErased;
+        document.getElementById('progress').innerHTML = progress;
+    };
+
+    var list = new List(document.getElementById('dialogBox'));
+    list.init();
+    list.finalList();
+
+    var addButton = document.getElementById('add').addEventListener('click', function(event){
+        var input = document.getElementById('input').value.trim();
+        list.addElement(input);
+        document.getElementById('input').value = "";
+    });
+
+    var removeButton = document.getElementById('remove').addEventListener('click', function(event){
+        list.removeCase(event);
+    });
+
+
+</script>
+
+</body>
+</html>
+
+
+
+

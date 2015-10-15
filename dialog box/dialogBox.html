@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <style>
+
+        #dialogBox {
+            width: 400px;
+            height: 250px;
+            border: 2px solid #5F9EA0;
+            border-radius: 5px;
+            background: #ebfffc;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            opacity: 0.0;
+        }
+
+        #wrapper {
+            width: 400px;
+            float: left;
+            margin: auto auto;
+        }
+
+        #recommend {
+            width: 250px;
+            float: right;
+        }
+
+        #check {
+            float: left;
+        }
+
+        #rightSide {
+            float: right;
+            margin: 10px 5px 0 0;
+        }
+
+        #leftSide {
+            float: left;
+            padding: 10px;
+            color: #ebfffc;
+            font-weight: bold;
+        }
+
+        #close {
+            border-radius: 10px;
+        }
+
+        #animation {
+            border-radius: 7px;
+        }
+
+        .ulList {
+            padding: 0;
+            margin: 0;
+        }
+
+        .mark {
+            margin-top: 16px;
+            margin-left: 20px;
+        }
+
+        .liRadio{
+            list-style-type: none;
+            margin: 10px 0;
+        }
+
+        .liRecommend {
+            list-style-type: none;
+            margin: 23px 0;
+        }
+        #ans {
+            border-radius: 6px;
+            padding: 3px;
+            font-size: 14px;
+            background-color: #5F9EA0;
+            color: #EBFFFC;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="ans" value="" style="display: none;">
+<button id="animation"> Click me right now! </button>
+<div id="dialogBox">
+
+    <div id="header"  style="border-bottom: 2px solid white; background-color: cadetblue">
+        <div id='leftSide'>
+            <span>Определите ваше настроение</span>
+        </div>
+        <div id='rightSide'>
+            <button id="close"> X </button>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div id="wrapper">
+        <div id='check'>
+            <ul class="ulList">
+                <li class="liRadio">
+                    <label>
+                        <input type="radio" id="one" name="one" class="mark" value="" style="text-align: right;">
+                        отличное
+                    </label>
+                </li>
+                <li class="liRadio">
+                    <label>
+                        <input type="radio" id="two" name="one" class="mark" value="" style="text-align: right;">
+                        хорошее
+                    </label>
+                </li>
+                <li class="liRadio">
+                    <label>
+                        <input type="radio" id="three" name="one" class="mark" value="" style="text-align: right;">
+                        нормальное
+                    </label>
+                </li>
+                <li class="liRadio">
+                    <label>
+                        <input id="four" type="radio"  name="one" class="mark" value="" style="text-align: right;">
+                        плохое
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div id='recommend'>
+            <ul class="ulList">
+                <li class="liRecommend" id="one-answer">
+                    &nbsp;
+                </li>
+
+                <li class="liRecommend" id="two-answer">
+                    &nbsp;
+                </li>
+
+                <li class="liRecommend" id="three-answer">
+                    &nbsp;
+                </li>
+
+                <li class="liRecommend" id="four-answer">
+                    &nbsp;
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+
+        var recommendList = document.getElementsByClassName('liRecommend');
+        var check         = document.getElementById('check');
+        var answerInput = document.getElementById('ans');
+        var answers =
+        {
+            one:   "мы рады это слышать",
+            two:    "наверное вы выспались",
+            three : "оно и видно",
+            four:     "какавушка?"
+        };
+        function displayAnswer(event) {
+        	if (event.target.className == "mark") {
+                var
+                        radioButton = event.target,
+                        id = radioButton.id,
+                        answer = answers[id],
+                        targetElement = document.getElementById(id+'-answer');
+                if(radioButton.checked) {
+                    answerInput.value = answer;
+
+                    targetElement.appendChild(answerInput);
+                    answerInput.style.display = '';
+                }
+            }
+        }
+        check.addEventListener('click', displayAnswer);
+
+        
+
+
+        function Dialog(domNode)
+        {
+            if(domNode.nodeType) {
+                this.domNode = domNode;
+            } else {
+                this.domNode = document.getElementById(domNode);
+            }
+            var self = this;
+            this.closeButton = document.getElementById('close');
+
+            this.closeButton.addEventListener('click', function(){
+                self.hide();
+            })
+        }
+
+        Dialog.prototype.domNode = null;
+        Dialog.prototype.closeButton = null;
+
+        Dialog.prototype.show = function(done) {
+            this.domNode.style.opacity = 0;
+            var count    = 0.0;
+            var self = this;
+            done = done || function(){}
+
+            var interval = setInterval(function(){
+
+                if(count > 1.0) {
+                    clearInterval(interval);
+                    done();
+                } else {
+                    count += 0.1;
+                    self.domNode.style.opacity = count;
+                }
+
+
+            },50)
+        };
+        Dialog.prototype.hide = function(done) {
+            var count    = 1.0;
+            var self = this;
+            done = done || function(){};
+            var interval = setInterval(function(){
+                if (count < 0.0) {
+                    clearInterval(interval);
+                    done();
+                } else {
+                    count -= 0.1;
+                    self.domNode.style.opacity = count;
+                }
+            },50);
+        }
+
+        window.dialog = new Dialog('dialogBox');
+        var showDialogButton = document.getElementById('animation');
+        showDialogButton.addEventListener('click', function(){
+            dialog.show();
+        });
+
+
+    </script>
+</div>
+</body>
+</html>

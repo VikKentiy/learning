@@ -1,0 +1,115 @@
+h1{
+	text-transform: uppercase;
+	margin: 20px 0 20px 0;
+}
+.hide{
+	display: none;
+}
+.block {
+	background-color: black;
+	min-height: 100%;
+}
+.header {
+	color: white;
+	margin: 0 auto;
+}
+.center {
+	float: none;
+	margin: 0 auto;
+}
+.task {
+	height: 589px;
+}
+div p {
+	color: white;
+	margin-bottom: 20px;
+}
+#go{
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	border: 5px solid green;
+	border-radius: 50px;
+	font-size: 44px;
+	color: green;
+	font-weight: bold;
+	float: none;
+	margin: 0 auto 20px auto;
+	text-transform: uppercase;
+}
+#coloredWords {
+	height: 200px;
+	background-color: black;
+	margin: 0 0 20px 0;
+	font-size: 100px;
+	font-weight: bolder;
+	color: white;
+	text-align: center;
+	line-height: 175px;
+}
+#buttonsForAnswers{
+	margin: 0 0 20px 0;
+}
+#buttonsForAnswers div button {
+	width: 100px;
+	height: 100px;
+	background-color: white;
+	border-radius: 50px;
+	font-size: 26px;
+	font-style: bold;
+	color: black;
+	float: none;
+	margin: 0 auto;
+	font-weight: bold;
+}
+#wastedTime {
+	position: relative;
+	margin-bottom: 40px;
+	border-radius: 7px;
+}
+
+#seconds div{
+	margin: 0;
+	padding: 0;
+}
+#seconds{
+	background-color: white;
+	color: white;
+	float: left;
+	width: 10%;
+	border-left: 2px solid white;
+	padding-left: 3px;
+}
+
+#finalResult {
+	float: left;
+	width: 80%;
+	height: 100px;
+	background-color: black;
+	margin: 0 0 20px 0;
+	font-size: 20px;
+	font-weight: bolder;
+	color: white;
+	line-height: 35px;
+}
+
+#level2 {
+	float: right;
+	width: 100px;
+	height: 100px;
+	background-color: black;
+	border: 5px solid green;
+	border-radius: 50px;
+	font-size: 20px;
+	color: green;
+	font-weight: bold;
+	margin: 0 auto 20px auto;
+	text-transform: uppercase;
+	padding-left: 10px;
+}
+
+#pointer > div {
+	border-radius: 7px;
+	border: 1px solid white;
+	/*left: -1%;*/
+}
